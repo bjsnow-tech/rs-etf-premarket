@@ -71,6 +71,10 @@ Pulls daily OHLCV data from [Polygon.io](https://polygon.io) for every ticker co
 computes relative-strength deltas and thrust, and flags tickers with an improving RS trend as
 "Setups." An included `visualize.py` script renders the CSV as a dark-themed HTML dashboard.
 
+> **Note:** Polygon.io has rebranded to Massive. The `polygon-api-client` package,
+> `POLYGON_API_KEY` env var, and API endpoints used here are unaffected as of this writing, but
+> expect the SDK/branding to migrate over time.
+
 ### Features
 
 - **Broad default universe**: indices, size/style segments, equal-weight sector ETFs, SPDR
