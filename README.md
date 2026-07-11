@@ -16,6 +16,10 @@ universe, or vice versa.
 `visualize.py`'s HTML dashboard output — real ETF/sector data, heatmapped % columns and inline
 RS trend sparklines. Static screenshot: [`docs/dashboard_screenshot.png`](docs/dashboard_screenshot.png).
 
+> Looking for the Finviz screener output? Jump to the
+> [`trend_confirmation_filter.py` sample output](#finviz-screeners) below, or see
+> [`docs/trend_confirmation_filter_demo.md`](docs/trend_confirmation_filter_demo.md).
+
 ## Project layout
 
 ```text
