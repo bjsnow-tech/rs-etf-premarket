@@ -11,6 +11,10 @@ They're independent (neither imports the other) but pair naturally: run the Finv
 to source candidate lists, then use `rs-premarket` to rank relative strength across your own
 universe, or vice versa.
 
+**Prerequisites:** a paid **Finviz Elite** subscription (for the `export.ashx` screener URLs
+and auth token) and a paid **Massive** (formerly Polygon.io) API subscription (for OHLCV/daily
+bar data). Neither tool works on free-tier access to these services.
+
 ![RS Premarket dashboard demo](docs/dashboard_demo.gif)
 
 `visualize.py`'s HTML dashboard output — real ETF/sector data, heatmapped % columns and inline
