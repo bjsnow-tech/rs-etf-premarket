@@ -201,7 +201,8 @@ python weekly_range_filter.py --no-save          # print only, skip the markdown
 
 Reads `results/<date>/tickers.txt`, fetches each unique ticker's weekly performance from
 Finviz, and prints (and optionally saves to `daily_insights/<date>/<date>_weekly_range_filter.md`)
-a report grouped by originating screener section.
+a report grouped by originating screener section. Sample output:
+[`docs/weekly_range_filter_demo.md`](docs/weekly_range_filter_demo.md).
 
 **Trend confirmation (second-stage filter):**
 
@@ -219,7 +220,8 @@ far from its trend line. Requires `POLYGON_API_KEY` in `.env` in addition to
 `FINVIZ_AUTH_TOKEN`. Saves to
 `daily_insights/<date>/<date>_trend_confirmation_filter.md` (or `..._atr{N}.md` when
 `--atr-mult` isn't the default) in the same comma-delimited, per-section table format as
-`weekly_range_filter.py`.
+`weekly_range_filter.py`. Sample output:
+[`docs/trend_confirmation_filter_demo.md`](docs/trend_confirmation_filter_demo.md).
 
 ### Notes
 
