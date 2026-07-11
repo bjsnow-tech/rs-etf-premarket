@@ -2,3 +2,4 @@ pandas>=2.0
 requests>=2.31
 PyYAML>=6.0
 python-dotenv>=1.2.2
+polygon-api-client>=1.16.3

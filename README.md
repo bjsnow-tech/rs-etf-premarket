@@ -29,9 +29,10 @@ rs-etf-premarket/
 │       └── cli.py       ← entry point, Polygon fetch, RS computation
 └── finviz_screeners/
     ├── requirements.txt
-    ├── screeners.yaml            ← named Finviz Elite export URLs
-    ├── run_screeners.py          ← fetches each screener, saves dated CSVs + tickers.txt
-    └── weekly_range_filter.py    ← filters a day's tickers by trailing weekly performance
+    ├── screeners.yaml                    ← named Finviz Elite export URLs
+    ├── run_screeners.py                  ← fetches each screener, saves dated CSVs + tickers.txt
+    ├── weekly_range_filter.py            ← filters a day's tickers by trailing weekly performance
+    └── trend_confirmation_filter.py      ← further filters those by 50/200 SMA trend + ATR distance
 ```
 
 ## Configuration
@@ -195,6 +196,23 @@ python weekly_range_filter.py --no-save          # print only, skip the markdown
 Reads `results/<date>/tickers.txt`, fetches each unique ticker's weekly performance from
 Finviz, and prints (and optionally saves to `daily_insights/<date>/<date>_weekly_range_filter.md`)
 a report grouped by originating screener section.
+
+**Trend confirmation (second-stage filter):**
+
+```bash
+python trend_confirmation_filter.py                    # today, same weekly band as above
+python trend_confirmation_filter.py --date 2026-07-08
+python trend_confirmation_filter.py --atr-mult 3        # tighter trend-distance cap
+python trend_confirmation_filter.py --no-save
+```
+
+Re-applies the weekly compression filter, then — for Polygon.io daily bars — keeps only
+tickers that are above both their 50-day and 200-day SMA and within `--atr-mult` (default 5)
+ATR(14)s of the 50-day SMA. This confirms an established uptrend that hasn't already run too
+far from its trend line. Requires `POLYGON_API_KEY` in `.env` in addition to
+`FINVIZ_AUTH_TOKEN`. Saves to
+`daily_insights/<date>/<date>_trend_confirmation_filter.md` in the same comma-delimited,
+per-section format as `weekly_range_filter.py`.
 
 ### Notes
 
