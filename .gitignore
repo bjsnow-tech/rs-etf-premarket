@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment
+.env
+
+# macOS
+.DS_Store
+
+# Output data
+results/
+*.csv
+!rs_custom_universe_template.csv
+!premarket_overview_universe_template.csv
+*.png

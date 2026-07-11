@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rs-etf-premarket"
+version = "0.1.0"
+description = "Relative strength premarket overview CSV builder for ETFs and stocks"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "polygon-api-client>=1.16.3",
+    "python-dotenv>=1.2.2",
+]
+
+[project.scripts]
+rs-premarket = "rs_etf_premarket.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

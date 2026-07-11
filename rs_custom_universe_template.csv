@@ -1,0 +1,9 @@
+Section,Ticker,Name,Benchmark
+Equal Weight Sectors,RSPT,S&P 500 Equal Weight Technology,SPY
+Equal Weight Sectors,RSPD,S&P 500 Equal Weight Consumer Discretionary,SPY
+Cap Weighted Sectors,XLK,Technology Select Sector SPDR,SPY
+Cap Weighted Sectors,XLY,Consumer Discretionary Select Sector SPDR,SPY
+Industry Groups,XSD,Semiconductor,SPY
+Industry Groups,XBI,Biotech,SPY
+Liquid Stocks,NVDA,NVIDIA,SPY
+Liquid Stocks,AMD,Advanced Micro Devices,SPY

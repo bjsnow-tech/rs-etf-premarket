@@ -1,0 +1,95 @@
+Section,Ticker,Name,Benchmark,Dashboard Block,Show On Dashboard,Notes
+Index,SPY,SPDR S&P 500 ETF Trust,SPY,Market Index Level,Yes,Core benchmark
+Index,RSP,Invesco S&P 500 Equal Weight ETF,SPY,Market Index Level,Yes,Equal-weight S&P 500
+Index,QQQE,Direxion NASDAQ-100 Equal Weighted Index Shares,SPY,Market Index Level,Yes,Equal-weight Nasdaq 100
+Index,IWM,iShares Russell 2000 ETF,SPY,Market Index Level,Yes,Small caps
+Index,TLT,iShares 20+ Year Treasury Bond ETF,SPY,Market Index Level,Yes,Rates / risk appetite
+Index,RPV,S&P 500 Large-Cap Value,SPY,Market Index Level,Yes,Large-cap value
+Index,RPG,S&P 500 Large-Cap Growth,SPY,Market Index Level,Yes,Large-cap growth
+Segment,IVV,S&P 500 Core,SPY,Market Segment Level,Yes,Large-cap core
+Segment,IVE,S&P 500 Value,SPY,Market Segment Level,Yes,Large-cap value
+Segment,IVW,S&P 500 Growth,SPY,Market Segment Level,Yes,Large-cap growth
+Segment,IJH,S&P Mid-Cap 400 Core,SPY,Market Segment Level,Yes,Mid-cap core
+Segment,IJJ,S&P Mid-Cap 400 Value,SPY,Market Segment Level,Yes,Mid-cap value
+Segment,IJK,S&P Mid-Cap 400 Growth,SPY,Market Segment Level,Yes,Mid-cap growth
+Segment,IJR,S&P Small-Cap 600 Core,SPY,Market Segment Level,Yes,Small-cap core
+Segment,IJS,S&P Small-Cap 600 Value,SPY,Market Segment Level,Yes,Small-cap value
+Segment,IJT,S&P Small-Cap 600 Growth,SPY,Market Segment Level,Yes,Small-cap growth
+Equal Weight Sector,RSPT,S&P 500 Equal Weight Technology,SPY,Equal Weight Sector Level,Yes,
+Equal Weight Sector,RSPD,S&P 500 Equal Weight Consumer Discretionary,SPY,Equal Weight Sector Level,Yes,
+Equal Weight Sector,RSPC,S&P 500 Equal Weight Communication Services,SPY,Equal Weight Sector Level,Yes,
+Equal Weight Sector,RSPR,S&P 500 Equal Weight Real Estate,SPY,Equal Weight Sector Level,Yes,
+Equal Weight Sector,RSPH,S&P 500 Equal Weight Health Care,SPY,Equal Weight Sector Level,Yes,
+Equal Weight Sector,RSPN,S&P 500 Equal Weight Industrials,SPY,Equal Weight Sector Level,Yes,
+Equal Weight Sector,RSPF,S&P 500 Equal Weight Financials,SPY,Equal Weight Sector Level,Yes,
+Equal Weight Sector,RSPG,S&P 500 Equal Weight Energy,SPY,Equal Weight Sector Level,Yes,
+Equal Weight Sector,RSPM,S&P 500 Equal Weight Materials,SPY,Equal Weight Sector Level,Yes,
+Equal Weight Sector,RSPU,S&P 500 Equal Weight Utilities,SPY,Equal Weight Sector Level,Yes,
+Equal Weight Sector,RSPS,S&P 500 Equal Weight Consumer Staples,SPY,Equal Weight Sector Level,Yes,
+SPDR Sector,XLK,Technology Select Sector SPDR,SPY,Cap Weighted Sector Level,Yes,
+SPDR Sector,XLY,Consumer Discretionary Select Sector SPDR,SPY,Cap Weighted Sector Level,Yes,
+SPDR Sector,XLC,Communication Services Select Sector SPDR,SPY,Cap Weighted Sector Level,Yes,
+SPDR Sector,XLRE,Real Estate Select Sector SPDR,SPY,Cap Weighted Sector Level,Yes,
+SPDR Sector,XLV,Health Care Select Sector SPDR,SPY,Cap Weighted Sector Level,Yes,
+SPDR Sector,XLI,Industrial Select Sector SPDR,SPY,Cap Weighted Sector Level,Yes,
+SPDR Sector,XLF,Financial Select Sector SPDR,SPY,Cap Weighted Sector Level,Yes,
+SPDR Sector,XLE,Energy Select Sector SPDR,SPY,Cap Weighted Sector Level,Yes,
+SPDR Sector,XLB,Materials Select Sector SPDR,SPY,Cap Weighted Sector Level,Yes,
+SPDR Sector,XLU,Utilities Select Sector SPDR,SPY,Cap Weighted Sector Level,Yes,
+SPDR Sector,XLP,Consumer Staples Select Sector SPDR,SPY,Cap Weighted Sector Level,Yes,
+Group,FXI,China Large Cap,SPY,Equal Weight Industry Group Level,Yes,
+Group,GXC,China,SPY,Equal Weight Industry Group Level,Yes,
+Group,FFTY,IBD 50,SPY,Equal Weight Industry Group Level,Yes,
+Group,XHB,Homebuilders,SPY,Equal Weight Industry Group Level,Yes,
+Group,CIBR,Cyber Security,SPY,Equal Weight Industry Group Level,Yes,
+Group,PBJ,Food & Beverage,SPY,Equal Weight Industry Group Level,Yes,
+Group,XRT,Retail,SPY,Equal Weight Industry Group Level,Yes,
+Group,IBUY,Online Retail,SPY,Equal Weight Industry Group Level,Yes,
+Group,DRIV,Automation & EV,SPY,Equal Weight Industry Group Level,Yes,
+Group,WCLD,Cloud Computing,SPY,Equal Weight Industry Group Level,Yes,
+Group,PEJ,Leisure and Entertainment,SPY,Equal Weight Industry Group Level,Yes,
+Group,XTL,Telecom,SPY,Equal Weight Industry Group Level,Yes,
+Group,XSW,Software & Services,SPY,Equal Weight Industry Group Level,Yes,
+Group,KIE,Insurance,SPY,Equal Weight Industry Group Level,Yes,
+Group,IPAY,Mobile Payment,SPY,Equal Weight Industry Group Level,Yes,
+Group,USO,United States Oil,SPY,Equal Weight Industry Group Level,Yes,
+Group,KCE,Capital Markets,SPY,Equal Weight Industry Group Level,Yes,
+Group,ROBO,Robotics & Automation,SPY,Equal Weight Industry Group Level,Yes,
+Group,GNR,Natural Resources,SPY,Equal Weight Industry Group Level,Yes,
+Group,BOAT,Global Shipping,SPY,Equal Weight Industry Group Level,Yes,
+Group,XOP,Oil & Gas Exploration & Production,SPY,Equal Weight Industry Group Level,Yes,
+Group,FCG,Natural Gas,SPY,Equal Weight Industry Group Level,Yes,
+Group,BUZZ,Social Sentiment,SPY,Equal Weight Industry Group Level,Yes,
+Group,XHS,Health Care Services,SPY,Equal Weight Industry Group Level,Yes,
+Group,PAVE,Global Infrastructure,SPY,Equal Weight Industry Group Level,Yes,
+Group,MOO,Agribusiness,SPY,Equal Weight Industry Group Level,Yes,
+Group,KBE,US Banks,SPY,Equal Weight Industry Group Level,Yes,
+Group,GBTC,Bitcoin Trust,SPY,Equal Weight Industry Group Level,Yes,
+Group,XTN,Transportation,SPY,Equal Weight Industry Group Level,Yes,
+Group,XBI,Biotech,SPY,Equal Weight Industry Group Level,Yes,
+Group,BLOK,Crypto Related Companies,SPY,Equal Weight Industry Group Level,Yes,
+Group,XSD,Semiconductor,SPY,Equal Weight Industry Group Level,Yes,
+Group,XHE,Healthcare Equipment,SPY,Equal Weight Industry Group Level,Yes,
+Group,XPH,Pharmaceuticals,SPY,Equal Weight Industry Group Level,Yes,
+Group,KRE,Regional Banks,SPY,Equal Weight Industry Group Level,Yes,
+Group,XAR,Aerospace & Defence,SPY,Equal Weight Industry Group Level,Yes,
+Group,XES,Oil & Gas Equipment & Services,SPY,Equal Weight Industry Group Level,Yes,
+Group,COPX,Copper Miners,SPY,Equal Weight Industry Group Level,Yes,
+Group,PBW,Clean Energy,SPY,Equal Weight Industry Group Level,Yes,
+Group,XME,Metal & Mining,SPY,Equal Weight Industry Group Level,Yes,
+Group,SLX,Steel,SPY,Equal Weight Industry Group Level,Yes,
+Group,JETS,Airlines,SPY,Equal Weight Industry Group Level,Yes,
+Focus,IWP,iShares Russell Mid-Cap Growth ETF,SPY,RS ETF Setups,Yes,Focus list slot
+Focus,MTUM,iShares MSCI USA Momentum Factor ETF,SPY,RS ETF Setups,Yes,Focus list slot
+Focus,COPX,Global X Copper Miners ETF,SPY,RS ETF Setups,Yes,Focus list slot
+Stalk,ERX,Direxion Daily Energy Bull 2X Shares,SPY,Stalk,Yes,Stalk list slot
+Stalk,SOXL,Direxion Daily Semiconductor Bull 3X Shares,SPY,Stalk,Yes,Stalk list slot
+Liquid Stocks,COIN,Coinbase Global,SPY,Liquid Stocks,Yes,
+Liquid Stocks,NVDA,NVIDIA,SPY,Liquid Stocks,Yes,
+Liquid Stocks,AMZN,Amazon,SPY,Liquid Stocks,Yes,
+Liquid Stocks,MSFT,Microsoft,SPY,Liquid Stocks,Yes,
+Liquid Stocks,GOOGL,Alphabet,SPY,Liquid Stocks,Yes,
+Liquid Stocks,TSLA,Tesla,SPY,Liquid Stocks,Yes,
+Liquid Stocks,AAPL,Apple,SPY,Liquid Stocks,Yes,
+Liquid Stocks,BABA,Alibaba,SPY,Liquid Stocks,Yes,
+Liquid Stocks,AMD,Advanced Micro Devices,SPY,Liquid Stocks,Yes,
