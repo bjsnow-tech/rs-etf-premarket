@@ -203,6 +203,25 @@ python run_screeners.py --config my_screeners.yaml        # use a different scre
 Add or edit screeners directly in `screeners.yaml` — each entry is a `name` and a Finviz Elite
 `export.ashx` `url` with `{token}` as a placeholder for `FINVIZ_AUTH_TOKEN`.
 
+#### Screener descriptions
+
+| Screener | What it looks for |
+|---|---|
+| `post_market_hottest_stock` | $150M+ market cap, average volume over 2M and today's volume over 1M, positive institutional buying, a heavily shorted float, up 30%+ over the past quarter, with elevated weekly volatility — high-momentum, heavily-shorted names with real volume behind the move. |
+| `post_market_bases_at_beaten_down_levels` | $300M+ market cap, down year-to-date and 70%+ below their all-time high, but currently basing near their 50-day high while still 30%+ below their 52-week high and hovering around the 200-day SMA — "bombed-out" names attempting to repair a base. |
+| `post_market_canslim_calibrated` | $2B+ market cap, strong quarterly and trailing-twelve-month sales growth, positive institutional buying, trading within 5% of both the 20-day and 50-day high — a CANSLIM-style growth-momentum screen (strong fundamentals + price near short-term highs). |
+| `post_market_ipo` | $2B+ market cap, IPO'd within the past year, decent average volume, positive institutional buying — recent new issues that have already attracted institutional interest. |
+| `post_market_liquid_etf` | ETFs only, average volume over 1M shares, elevated weekly volatility — the subset of ETFs liquid and volatile enough to be worth tracking day to day. |
+| `post_market_highest_short_float` | $300M+ market cap, a float under 100M shares, and short interest over 30% of that float — classic short-squeeze setups (small float, heavily shorted). |
+| `qullamaggie_1_week` | $300M+ market cap, up 20%+ over the past week with volume and volatility confirmation — fast, single-week momentum breakouts. |
+| `qullamaggie_1_month` | Optionable stocks trading above their 200-day SMA, up 30%+ over the past month, with average volume over 2M and elevated monthly volatility — one-month momentum leaders. |
+| `qullamaggie_3_month` | Optionable stocks trading above both their 50-day and 200-day SMA, up 30%+ over the past quarter, average volume over 3M — three-month momentum leaders confirmed by trend. |
+| `qullamaggie_6_month` | Same as the 3-month version but over a 26-week (half-year) window and a $10+ price floor — longer-running momentum leaders trading above both key moving averages. |
+
+The last four are named after trader Qullamaggie's momentum/breakout screening style — different
+lookback windows (1 week / 1 month / 3 month / 6 month) on the same core idea: strong recent
+performance confirmed by trend and volume, not just a single-day pop.
+
 **Filter by trailing weekly performance:**
 
 ```bash
