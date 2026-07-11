@@ -232,7 +232,7 @@ far from its trend line. Requires `POLYGON_API_KEY` in `.env` in addition to
 
 # Trend Confirmation Filter — 2026-07-11
 
-Weekly compression band: -5% to +5% · Trend gate: close > 50 SMA > 200 SMA, within 3x ATR(14) of the 50 SMA
+Weekly compression band: -5% to +5% · Trend gate: close > 50 SMA > 200 SMA, within 4x ATR(14) of the 50 SMA
 
 ## post_market_hottest_stock (1/14)
 
@@ -242,15 +242,17 @@ Weekly compression band: -5% to +5% · Trend gate: close > 50 SMA > 200 SMA, wit
 
 INDI
 
-## post_market_bases_at_beaten_down_levels (1/21)
+## post_market_bases_at_beaten_down_levels (3/21)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
 | FRSH | +0.19% | 10.36 | 9.34 | 10.09 | +2.15 |
+| AMPL | +3.85% | 9.18 | 7.27 | 8.68 | +3.15 |
+| TRIP | -2.17% | 13.98 | 11.74 | 12.92 | +3.41 |
 
-FRSH
+FRSH, AMPL, TRIP
 
-## post_market_canslim_calibrated (6/52)
+## post_market_canslim_calibrated (9/52)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
@@ -260,10 +262,13 @@ FRSH
 | FROG | -4.29% | 90.74 | 76.30 | 58.09 | +2.65 |
 | RBRK | +0.88% | 84.38 | 70.50 | 66.99 | +2.75 |
 | DDOG | -1.08% | 257.54 | 220.86 | 159.17 | +2.85 |
+| AFRM | -1.37% | 83.42 | 71.16 | 66.18 | +3.12 |
+| DLO | +2.08% | 15.19 | 12.77 | 13.38 | +3.34 |
+| GH | -4.72% | 160.05 | 124.37 | 100.53 | +3.88 |
 
-ZETA, ALAB, IOT, FROG, RBRK, DDOG
+ZETA, ALAB, IOT, FROG, RBRK, DDOG, AFRM, DLO, GH
 
-## post_market_liquid_etf (14/171)
+## post_market_liquid_etf (18/171)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
@@ -281,27 +286,37 @@ ZETA, ALAB, IOT, FROG, RBRK, DDOG
 | AAPU | +4.53% | 41.27 | 37.69 | 33.67 | +1.63 |
 | UNHG | -0.84% | 23.71 | 21.14 | 17.61 | +2.33 |
 | WCLD | +1.01% | 33.86 | 30.74 | 31.54 | +2.52 |
+| CIBR | +1.33% | 91.88 | 83.23 | 73.72 | +3.30 |
+| ARKG | -3.71% | 41.32 | 34.45 | 30.71 | +3.62 |
+| SVIX | +4.67% | 24.87 | 21.58 | 20.67 | +3.64 |
+| BUG | +0.10% | 39.37 | 34.01 | 30.97 | +3.79 |
 
-DRN, MULL, TSMX, MUU, PLTD, SOXQ, SOXX, ARKK, SPYU, URTY, TNA, AAPU, UNHG, WCLD
+DRN, MULL, TSMX, MUU, PLTD, SOXQ, SOXX, ARKK, SPYU, URTY, TNA, AAPU, UNHG, WCLD, CIBR, ARKG, SVIX, BUG
 
-## post_market_highest_short_float (1/16)
+## post_market_highest_short_float (2/16)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
 | NTST | -0.74% | 21.50 | 20.48 | 19.27 | +2.10 |
+| GRPN | +1.84% | 26.05 | 19.02 | 16.81 | +3.71 |
 
-NTST
+NTST, GRPN
 
-## qullamaggie_1_month (2/15)
+## qullamaggie_1_month (7/15)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
 | IRWD | +3.23% | 4.47 | 3.91 | 3.47 | +2.07 |
 | BFLY | +3.91% | 7.98 | 5.70 | 3.99 | +2.60 |
+| AMPL | +3.85% | 9.18 | 7.27 | 8.68 | +3.15 |
+| HOOD | -0.67% | 111.97 | 89.55 | 102.19 | +3.26 |
+| GRPN | +1.84% | 26.05 | 19.02 | 16.81 | +3.71 |
+| PSNL | +3.30% | 14.07 | 9.67 | 8.57 | +3.71 |
+| VRNS | +3.90% | 44.53 | 33.70 | 34.10 | +3.88 |
 
-IRWD, BFLY
+IRWD, BFLY, AMPL, HOOD, GRPN, PSNL, VRNS
 
-## qullamaggie_3_month (44/100)
+## qullamaggie_3_month (52/100)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
@@ -349,10 +364,18 @@ IRWD, BFLY
 | BFLY | +3.91% | 7.98 | 5.70 | 3.99 | +2.60 |
 | RBRK | +0.88% | 84.38 | 70.50 | 66.99 | +2.75 |
 | DDOG | -1.08% | 257.54 | 220.86 | 159.17 | +2.85 |
+| NVO | -1.88% | 49.48 | 45.38 | 47.57 | +3.00 |
+| AVTR | +0.68% | 10.39 | 9.03 | 10.33 | +3.07 |
+| AFRM | -1.37% | 83.42 | 71.16 | 66.18 | +3.12 |
+| HOOD | -0.67% | 111.97 | 89.55 | 102.19 | +3.26 |
+| FTNT | +0.81% | 157.51 | 134.27 | 95.09 | +3.50 |
+| ARKG | -3.71% | 41.32 | 34.45 | 30.71 | +3.62 |
+| PSNL | +3.30% | 14.07 | 9.67 | 8.57 | +3.71 |
+| APLE | -0.48% | 16.56 | 15.26 | 12.81 | +3.77 |
 
-MULL, SHLS, MUU, MXL, MRVL, SG, INDI, AMC, BZFD, QLD, ARM, SOXX, LRCX, SMH, STM, MU, XLK, KLAC, TNA, ZETA, NNBR, BEN, S, IBKR, ASX, CMPS, EWT, WRBY, AMAT, OGN, UMC, GEN, ALAB, FRSH, IOT, RDDT, RELY, DBX, BB, CRWD, SGHC, BFLY, RBRK, DDOG
+MULL, SHLS, MUU, MXL, MRVL, SG, INDI, AMC, BZFD, QLD, ARM, SOXX, LRCX, SMH, STM, MU, XLK, KLAC, TNA, ZETA, NNBR, BEN, S, IBKR, ASX, CMPS, EWT, WRBY, AMAT, OGN, UMC, GEN, ALAB, FRSH, IOT, RDDT, RELY, DBX, BB, CRWD, SGHC, BFLY, RBRK, DDOG, NVO, AVTR, AFRM, HOOD, FTNT, ARKG, PSNL, APLE
 
-## qullamaggie_6_month (44/87)
+## qullamaggie_6_month (50/87)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
@@ -400,8 +423,14 @@ MULL, SHLS, MUU, MXL, MRVL, SG, INDI, AMC, BZFD, QLD, ARM, SOXX, LRCX, SMH, STM,
 | VLO | +4.83% | 280.69 | 253.35 | 208.18 | +2.72 |
 | SIRI | -0.29% | 30.42 | 28.07 | 23.51 | +2.78 |
 | DDOG | -1.08% | 257.54 | 220.86 | 159.17 | +2.85 |
+| PK | -1.73% | 14.17 | 12.95 | 11.43 | +3.01 |
+| CSX | +1.06% | 49.41 | 46.47 | 40.15 | +3.43 |
+| ACHC | -1.97% | 31.28 | 26.13 | 21.35 | +3.45 |
+| FTNT | +0.81% | 157.51 | 134.27 | 95.09 | +3.50 |
+| PSNL | +3.30% | 14.07 | 9.67 | 8.57 | +3.71 |
+| APLE | -0.48% | 16.56 | 15.26 | 12.81 | +3.77 |
 
-GLW, DHT, MULL, MUU, MXL, MO, VTRS, MRVL, FRO, ARM, TSM, CAT, SOXX, CARR, LRCX, SMH, PRMB, STM, MU, KLAC, ADM, KNX, TNA, BEN, TGT, IBKR, ASX, CMPS, EWT, AMAT, OGN, UMC, ALAB, MAC, EBAY, VIK, RELY, BB, CRWD, SGHC, MGM, VLO, SIRI, DDOG
+GLW, DHT, MULL, MUU, MXL, MO, VTRS, MRVL, FRO, ARM, TSM, CAT, SOXX, CARR, LRCX, SMH, PRMB, STM, MU, KLAC, ADM, KNX, TNA, BEN, TGT, IBKR, ASX, CMPS, EWT, AMAT, OGN, UMC, ALAB, MAC, EBAY, VIK, RELY, BB, CRWD, SGHC, MGM, VLO, SIRI, DDOG, PK, CSX, ACHC, FTNT, PSNL, APLE
 
 </details>
 
@@ -423,14 +452,14 @@ MIT — see [LICENSE](LICENSE).
 
 ## Full Sample Output: Trend Confirmation Filter
 
-> Sample output from a real run of `finviz_screeners/trend_confirmation_filter.py` against the
+> Sample output from a real run of `finviz_screeners/trend_confirmation_filter.py --atr-mult 4` against the
 > screener set in `screeners.yaml`. Your own output will differ day to day.
 
-### Trend Confirmation Filter — 2026-07-11
+## Trend Confirmation Filter — 2026-07-11
 
-Weekly compression band: -5% to +5% · Trend gate: close > 50 SMA > 200 SMA, within 3x ATR(14) of the 50 SMA
+Weekly compression band: -5% to +5% · Trend gate: close > 50 SMA > 200 SMA, within 4x ATR(14) of the 50 SMA
 
-#### post_market_hottest_stock (1/14)
+### post_market_hottest_stock (1/14)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
@@ -438,15 +467,17 @@ Weekly compression band: -5% to +5% · Trend gate: close > 50 SMA > 200 SMA, wit
 
 INDI
 
-#### post_market_bases_at_beaten_down_levels (1/21)
+### post_market_bases_at_beaten_down_levels (3/21)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
 | FRSH | +0.19% | 10.36 | 9.34 | 10.09 | +2.15 |
+| AMPL | +3.85% | 9.18 | 7.27 | 8.68 | +3.15 |
+| TRIP | -2.17% | 13.98 | 11.74 | 12.92 | +3.41 |
 
-FRSH
+FRSH, AMPL, TRIP
 
-#### post_market_canslim_calibrated (6/52)
+### post_market_canslim_calibrated (9/52)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
@@ -456,10 +487,13 @@ FRSH
 | FROG | -4.29% | 90.74 | 76.30 | 58.09 | +2.65 |
 | RBRK | +0.88% | 84.38 | 70.50 | 66.99 | +2.75 |
 | DDOG | -1.08% | 257.54 | 220.86 | 159.17 | +2.85 |
+| AFRM | -1.37% | 83.42 | 71.16 | 66.18 | +3.12 |
+| DLO | +2.08% | 15.19 | 12.77 | 13.38 | +3.34 |
+| GH | -4.72% | 160.05 | 124.37 | 100.53 | +3.88 |
 
-ZETA, ALAB, IOT, FROG, RBRK, DDOG
+ZETA, ALAB, IOT, FROG, RBRK, DDOG, AFRM, DLO, GH
 
-#### post_market_liquid_etf (14/171)
+### post_market_liquid_etf (18/171)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
@@ -477,27 +511,37 @@ ZETA, ALAB, IOT, FROG, RBRK, DDOG
 | AAPU | +4.53% | 41.27 | 37.69 | 33.67 | +1.63 |
 | UNHG | -0.84% | 23.71 | 21.14 | 17.61 | +2.33 |
 | WCLD | +1.01% | 33.86 | 30.74 | 31.54 | +2.52 |
+| CIBR | +1.33% | 91.88 | 83.23 | 73.72 | +3.30 |
+| ARKG | -3.71% | 41.32 | 34.45 | 30.71 | +3.62 |
+| SVIX | +4.67% | 24.87 | 21.58 | 20.67 | +3.64 |
+| BUG | +0.10% | 39.37 | 34.01 | 30.97 | +3.79 |
 
-DRN, MULL, TSMX, MUU, PLTD, SOXQ, SOXX, ARKK, SPYU, URTY, TNA, AAPU, UNHG, WCLD
+DRN, MULL, TSMX, MUU, PLTD, SOXQ, SOXX, ARKK, SPYU, URTY, TNA, AAPU, UNHG, WCLD, CIBR, ARKG, SVIX, BUG
 
-#### post_market_highest_short_float (1/16)
+### post_market_highest_short_float (2/16)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
 | NTST | -0.74% | 21.50 | 20.48 | 19.27 | +2.10 |
+| GRPN | +1.84% | 26.05 | 19.02 | 16.81 | +3.71 |
 
-NTST
+NTST, GRPN
 
-#### qullamaggie_1_month (2/15)
+### qullamaggie_1_month (7/15)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
 | IRWD | +3.23% | 4.47 | 3.91 | 3.47 | +2.07 |
 | BFLY | +3.91% | 7.98 | 5.70 | 3.99 | +2.60 |
+| AMPL | +3.85% | 9.18 | 7.27 | 8.68 | +3.15 |
+| HOOD | -0.67% | 111.97 | 89.55 | 102.19 | +3.26 |
+| GRPN | +1.84% | 26.05 | 19.02 | 16.81 | +3.71 |
+| PSNL | +3.30% | 14.07 | 9.67 | 8.57 | +3.71 |
+| VRNS | +3.90% | 44.53 | 33.70 | 34.10 | +3.88 |
 
-IRWD, BFLY
+IRWD, BFLY, AMPL, HOOD, GRPN, PSNL, VRNS
 
-#### qullamaggie_3_month (44/100)
+### qullamaggie_3_month (52/100)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
@@ -545,10 +589,18 @@ IRWD, BFLY
 | BFLY | +3.91% | 7.98 | 5.70 | 3.99 | +2.60 |
 | RBRK | +0.88% | 84.38 | 70.50 | 66.99 | +2.75 |
 | DDOG | -1.08% | 257.54 | 220.86 | 159.17 | +2.85 |
+| NVO | -1.88% | 49.48 | 45.38 | 47.57 | +3.00 |
+| AVTR | +0.68% | 10.39 | 9.03 | 10.33 | +3.07 |
+| AFRM | -1.37% | 83.42 | 71.16 | 66.18 | +3.12 |
+| HOOD | -0.67% | 111.97 | 89.55 | 102.19 | +3.26 |
+| FTNT | +0.81% | 157.51 | 134.27 | 95.09 | +3.50 |
+| ARKG | -3.71% | 41.32 | 34.45 | 30.71 | +3.62 |
+| PSNL | +3.30% | 14.07 | 9.67 | 8.57 | +3.71 |
+| APLE | -0.48% | 16.56 | 15.26 | 12.81 | +3.77 |
 
-MULL, SHLS, MUU, MXL, MRVL, SG, INDI, AMC, BZFD, QLD, ARM, SOXX, LRCX, SMH, STM, MU, XLK, KLAC, TNA, ZETA, NNBR, BEN, S, IBKR, ASX, CMPS, EWT, WRBY, AMAT, OGN, UMC, GEN, ALAB, FRSH, IOT, RDDT, RELY, DBX, BB, CRWD, SGHC, BFLY, RBRK, DDOG
+MULL, SHLS, MUU, MXL, MRVL, SG, INDI, AMC, BZFD, QLD, ARM, SOXX, LRCX, SMH, STM, MU, XLK, KLAC, TNA, ZETA, NNBR, BEN, S, IBKR, ASX, CMPS, EWT, WRBY, AMAT, OGN, UMC, GEN, ALAB, FRSH, IOT, RDDT, RELY, DBX, BB, CRWD, SGHC, BFLY, RBRK, DDOG, NVO, AVTR, AFRM, HOOD, FTNT, ARKG, PSNL, APLE
 
-#### qullamaggie_6_month (44/87)
+### qullamaggie_6_month (50/87)
 
 | Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |
 |---|---|---|---|---|---|
@@ -596,5 +648,11 @@ MULL, SHLS, MUU, MXL, MRVL, SG, INDI, AMC, BZFD, QLD, ARM, SOXX, LRCX, SMH, STM,
 | VLO | +4.83% | 280.69 | 253.35 | 208.18 | +2.72 |
 | SIRI | -0.29% | 30.42 | 28.07 | 23.51 | +2.78 |
 | DDOG | -1.08% | 257.54 | 220.86 | 159.17 | +2.85 |
+| PK | -1.73% | 14.17 | 12.95 | 11.43 | +3.01 |
+| CSX | +1.06% | 49.41 | 46.47 | 40.15 | +3.43 |
+| ACHC | -1.97% | 31.28 | 26.13 | 21.35 | +3.45 |
+| FTNT | +0.81% | 157.51 | 134.27 | 95.09 | +3.50 |
+| PSNL | +3.30% | 14.07 | 9.67 | 8.57 | +3.71 |
+| APLE | -0.48% | 16.56 | 15.26 | 12.81 | +3.77 |
 
-GLW, DHT, MULL, MUU, MXL, MO, VTRS, MRVL, FRO, ARM, TSM, CAT, SOXX, CARR, LRCX, SMH, PRMB, STM, MU, KLAC, ADM, KNX, TNA, BEN, TGT, IBKR, ASX, CMPS, EWT, AMAT, OGN, UMC, ALAB, MAC, EBAY, VIK, RELY, BB, CRWD, SGHC, MGM, VLO, SIRI, DDOG
+GLW, DHT, MULL, MUU, MXL, MO, VTRS, MRVL, FRO, ARM, TSM, CAT, SOXX, CARR, LRCX, SMH, PRMB, STM, MU, KLAC, ADM, KNX, TNA, BEN, TGT, IBKR, ASX, CMPS, EWT, AMAT, OGN, UMC, ALAB, MAC, EBAY, VIK, RELY, BB, CRWD, SGHC, MGM, VLO, SIRI, DDOG, PK, CSX, ACHC, FTNT, PSNL, APLE
