@@ -452,6 +452,22 @@ between screeners, and `weekly_range_filter.py` batches ticker lookups (150 per 
 
 ---
 
+## Automating Daily Runs
+
+Both tools are plain CLIs with no server component, so a small VPS with a cron job (or a
+systemd timer) is enough to run the whole pipeline unattended after the market close — e.g.
+`run_screeners.py` → `weekly_range_filter.py` → `trend_confirmation_filter.py` → `rs-premarket`
+→ `visualize.py`, each writing its dated CSV/markdown to disk.
+
+A nice extension: point [Claude Code](https://claude.com/claude-code) (or the
+[Claude API](https://docs.claude.com/en/api)) at the day's output CSV in a follow-up cron step
+and have it write a plain-English market summary — dominant sector rotation, notable RS
+divergences, tickers that triggered "Setup" or passed the trend filter — instead of reading the
+raw table by hand. This repo's own demo outputs in `docs/` were generated this way as one-off
+runs, not scripted digests, but wiring it into a daily prompt is straightforward.
+
+---
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
