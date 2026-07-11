@@ -11,6 +11,11 @@ They're independent (neither imports the other) but pair naturally: run the Finv
 to source candidate lists, then use `rs-premarket` to rank relative strength across your own
 universe, or vice versa.
 
+![RS Premarket dashboard demo](docs/dashboard_demo.gif)
+
+`visualize.py`'s HTML dashboard output — real ETF/sector data, heatmapped % columns and inline
+RS trend sparklines. Static screenshot: [`docs/dashboard_screenshot.png`](docs/dashboard_screenshot.png).
+
 ## Project layout
 
 ```text
@@ -133,7 +138,8 @@ python visualize.py rs_premarket_overview_last_close_20260710_1605.csv
 ```
 
 Renders a dark-themed HTML dashboard grouped by section (writes to `html/<name>.html` next to
-the CSV by default, or pass `--output` for a custom path).
+the CSV by default, or pass `--output` for a custom path). See the demo GIF and screenshot at
+the top of this README for what the output looks like.
 
 ### Output columns
 

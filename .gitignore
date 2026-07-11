@@ -30,3 +30,4 @@ daily_insights/
 !rs_custom_universe_template.csv
 !premarket_overview_universe_template.csv
 *.png
+!docs/*.png
