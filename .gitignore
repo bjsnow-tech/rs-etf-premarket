@@ -24,6 +24,8 @@ htmlcov/
 
 # Output data
 results/
+logs/
+daily_insights/
 *.csv
 !rs_custom_universe_template.csv
 !premarket_overview_universe_template.csv

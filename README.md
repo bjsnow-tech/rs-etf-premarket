@@ -1,4 +1,56 @@
-# RS ETF Premarket
+# RS ETF Premarket & Finviz Screeners
+
+Two companion tools for a daily relative-strength / screener workflow:
+
+- **`rs-premarket`** — builds a relative-strength "premarket overview" dashboard CSV across a
+  broad universe of ETFs and stocks, measured against a benchmark (default: SPY)
+- **`finviz_screeners`** — runs a set of saved Finviz Elite screener exports on a schedule and
+  filters the resulting tickers by trailing weekly performance
+
+They're independent (neither imports the other) but pair naturally: run the Finviz screeners
+to source candidate lists, then use `rs-premarket` to rank relative strength across your own
+universe, or vice versa.
+
+## Project layout
+
+```text
+rs-etf-premarket/
+├── README.md
+├── LICENSE
+├── .env.example                                ← shared: POLYGON_API_KEY, FINVIZ_AUTH_TOKEN
+├── pyproject.toml                              ← rs-premarket package
+├── rs_premarket_csv.py                         ← thin shim to the rs-premarket entry point
+├── visualize.py                                ← CSV → HTML dashboard renderer
+├── rs_custom_universe_template.csv             ← minimal custom-universe example
+├── premarket_overview_universe_template.csv    ← full default-style universe template
+├── src/
+│   └── rs_etf_premarket/
+│       ├── __init__.py
+│       └── cli.py       ← entry point, Polygon fetch, RS computation
+└── finviz_screeners/
+    ├── requirements.txt
+    ├── screeners.yaml            ← named Finviz Elite export URLs
+    ├── run_screeners.py          ← fetches each screener, saves dated CSVs + tickers.txt
+    └── weekly_range_filter.py    ← filters a day's tickers by trailing weekly performance
+```
+
+## Configuration
+
+Copy `.env.example` to `.env` and fill in your keys — both tools read from the same root
+`.env`:
+
+```bash
+cp .env.example .env
+```
+
+| Variable | Used by | Description |
+|---|---|---|
+| `POLYGON_API_KEY` | `rs-premarket` | Polygon.io API key for OHLCV and snapshot data (or pass `--polygon-key`) |
+| `FINVIZ_AUTH_TOKEN` | `finviz_screeners` | Finviz Elite auth token (Account → API) |
+
+---
+
+## RS ETF Premarket
 
 Builds a relative-strength "premarket overview" dashboard CSV across a broad universe of
 ETFs and stocks — indices, size/style segments, equal-weight and SPDR sector ETFs, industry
@@ -8,7 +60,7 @@ Pulls daily OHLCV data from [Polygon.io](https://polygon.io) for every ticker co
 computes relative-strength deltas and thrust, and flags tickers with an improving RS trend as
 "Setups." An included `visualize.py` script renders the CSV as a dark-themed HTML dashboard.
 
-## Features
+### Features
 
 - **Broad default universe**: indices, size/style segments, equal-weight sector ETFs, SPDR
   sector ETFs, dozens of industry-group ETFs, and select individual stocks
@@ -21,25 +73,7 @@ computes relative-strength deltas and thrust, and flags tickers with an improvin
 - Custom universe support via a `Section,Ticker,Name,Benchmark` CSV
 - `visualize.py`: renders any output CSV as a styled, sectioned HTML dashboard
 
-## Project layout
-
-```text
-rs-etf-premarket/
-├── README.md
-├── LICENSE
-├── pyproject.toml
-├── rs_premarket_csv.py                        ← thin shim to the rs-premarket entry point
-├── visualize.py                               ← CSV → HTML dashboard renderer
-├── rs_custom_universe_template.csv            ← minimal custom-universe example
-├── premarket_overview_universe_template.csv   ← full default-style universe template
-├── src/
-│   └── rs_etf_premarket/
-│       ├── __init__.py
-│       └── cli.py       ← entry point, Polygon fetch, RS computation
-└── tests/
-```
-
-## Install
+### Install
 
 ```bash
 python -m venv .venv
@@ -53,21 +87,9 @@ Or with [uv](https://github.com/astral-sh/uv):
 uv sync
 ```
 
-## Configuration
+### Usage
 
-Copy `.env.example` to `.env` and add your Polygon API key:
-
-```bash
-cp .env.example .env
-```
-
-| Variable | Required | Description |
-|---|---|---|
-| `POLYGON_API_KEY` | Yes (or pass `--polygon-key`) | Polygon.io API key for OHLCV and snapshot data |
-
-## Usage
-
-### Default universe
+**Default universe:**
 
 ```bash
 rs-premarket
@@ -76,25 +98,22 @@ rs-premarket
 Fetches ~1 year of daily bars for the full default universe (see `cli.py`'s `DEFAULT_UNIVERSE`),
 computes RS metrics vs. each row's benchmark (SPY by default), and writes a timestamped CSV.
 
-### Live / intraday proxy
-
-Overlay the latest Polygon snapshot price instead of the last completed daily bar:
+**Live / intraday proxy** — overlay the latest Polygon snapshot price instead of the last
+completed daily bar:
 
 ```bash
 rs-premarket --mode live
 ```
 
-### Custom universe
-
-Provide your own `Section,Ticker,Name,Benchmark` CSV (see `rs_custom_universe_template.csv` for
-the minimal format, or `premarket_overview_universe_template.csv` for the full default-style
-layout):
+**Custom universe** — provide your own `Section,Ticker,Name,Benchmark` CSV (see
+`rs_custom_universe_template.csv` for the minimal format, or
+`premarket_overview_universe_template.csv` for the full default-style layout):
 
 ```bash
 rs-premarket --tickers my_universe.csv
 ```
 
-### Other options
+**Other options:**
 
 ```bash
 rs-premarket --benchmark QQQ          # default benchmark for rows that omit one
@@ -106,7 +125,7 @@ rs-premarket --polygon-key <key>      # override env/`.env` key discovery
 
 Run `rs-premarket --help` for the full option list.
 
-### Visualizing results
+**Visualizing results:**
 
 ```bash
 python visualize.py rs_premarket_overview_last_close_20260710_1605.csv
@@ -115,7 +134,7 @@ python visualize.py rs_premarket_overview_last_close_20260710_1605.csv
 Renders a dark-themed HTML dashboard grouped by section (writes to `html/<name>.html` next to
 the CSV by default, or pass `--output` for a custom path).
 
-## Output columns
+### Output columns
 
 Each row includes: `Section`, `Ticker`, `Name`, `Benchmark`, `% Daily`, `% Monthly`,
 `1M RS Δ` (1-month relative-strength change), `1M RS %` (percentile rank within its section),
@@ -123,11 +142,67 @@ Each row includes: `Section`, `Ticker`, `Name`, `Benchmark`, `% Daily`, `% Month
 `1-Month RS Histogram` (compact trailing-trend sparkline), `RS High In Window`, and
 `Setup` / `Status` flags.
 
-## Notes
-
 RS metrics are computed directly from Polygon daily bars, not sourced from a third-party rating
 service — treat the "Setup" flag as a starting point for further research, not a standalone
 signal.
+
+---
+
+## Finviz Screeners
+
+Runs a set of named Finviz Elite screener exports (defined in `screeners.yaml`) and saves each
+one as a dated CSV, plus a combined `tickers.txt` grouped by screener. A second script,
+`weekly_range_filter.py`, reads that `tickers.txt` and reports which tickers' trailing weekly
+performance falls within a target range — useful for finding names that have consolidated
+rather than run away.
+
+### Install
+
+```bash
+pip install -r finviz_screeners/requirements.txt
+```
+
+### Usage
+
+**Run all screeners** (requires a Finviz **Elite** subscription and auth token):
+
+```bash
+cd finviz_screeners
+python run_screeners.py
+```
+
+Saves each screener to `results/<YYYY-MM-DD>/<screener_name>.csv`, plus
+`results/<YYYY-MM-DD>/tickers.txt` (all tickers, grouped by screener section).
+
+```bash
+python run_screeners.py --screener qullamaggie_1_month   # run a single screener
+python run_screeners.py --output-dir custom_dir          # override output directory
+python run_screeners.py --config my_screeners.yaml        # use a different screener config
+```
+
+Add or edit screeners directly in `screeners.yaml` — each entry is a `name` and a Finviz Elite
+`export.ashx` `url` with `{token}` as a placeholder for `FINVIZ_AUTH_TOKEN`.
+
+**Filter by trailing weekly performance:**
+
+```bash
+python weekly_range_filter.py                    # today, -5% to +5%
+python weekly_range_filter.py --date 2026-07-08
+python weekly_range_filter.py --min -3 --max 3
+python weekly_range_filter.py --no-save          # print only, skip the markdown write
+```
+
+Reads `results/<date>/tickers.txt`, fetches each unique ticker's weekly performance from
+Finviz, and prints (and optionally saves to `daily_insights/<date>/<date>_weekly_range_filter.md`)
+a report grouped by originating screener section.
+
+### Notes
+
+Finviz Elite enforces rate limits on export requests — `run_screeners.py` sleeps 3 seconds
+between screeners, and `weekly_range_filter.py` batches ticker lookups (150 per request) with a
+1-second pause between batches.
+
+---
 
 ## License
 
