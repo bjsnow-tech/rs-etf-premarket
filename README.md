@@ -202,17 +202,18 @@ a report grouped by originating screener section.
 ```bash
 python trend_confirmation_filter.py                    # today, same weekly band as above
 python trend_confirmation_filter.py --date 2026-07-08
-python trend_confirmation_filter.py --atr-mult 3        # tighter trend-distance cap
+python trend_confirmation_filter.py --atr-mult 5        # looser trend-distance cap
 python trend_confirmation_filter.py --no-save
 ```
 
 Re-applies the weekly compression filter, then — for Polygon.io daily bars — keeps only
-tickers that are above both their 50-day and 200-day SMA and within `--atr-mult` (default 5)
+tickers that are above both their 50-day and 200-day SMA and within `--atr-mult` (default 3)
 ATR(14)s of the 50-day SMA. This confirms an established uptrend that hasn't already run too
 far from its trend line. Requires `POLYGON_API_KEY` in `.env` in addition to
 `FINVIZ_AUTH_TOKEN`. Saves to
-`daily_insights/<date>/<date>_trend_confirmation_filter.md` in the same comma-delimited,
-per-section format as `weekly_range_filter.py`.
+`daily_insights/<date>/<date>_trend_confirmation_filter.md` (or `..._atr{N}.md` when
+`--atr-mult` isn't the default) in the same comma-delimited, per-section table format as
+`weekly_range_filter.py`.
 
 ### Notes
 

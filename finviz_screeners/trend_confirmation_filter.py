@@ -8,7 +8,7 @@ band) and keeps only those that are:
 
   1. Above their 200-day SMA
   2. Above their 50-day SMA
-  3. Within `--atr-mult` (default 5) ATR(14)s of their 50-day SMA
+  3. Within `--atr-mult` (default 3) ATR(14)s of their 50-day SMA
 
 i.e. confirmed uptrend, not yet extended far above the 50-day line.
 
@@ -88,7 +88,7 @@ def _atr(high: pd.Series, low: pd.Series, close: pd.Series, length: int) -> pd.S
         (high - prev_close).abs(),
         (low - prev_close).abs(),
     ], axis=1).max(axis=1)
-    return tr.ewm(span=length, adjust=False).mean()
+    return tr.rolling(length).mean()
 
 
 # ---------------------------------------------------------------------------
@@ -199,6 +199,11 @@ def build_report(
         total_matches += len(matches)
         lines.append(f"## {name} ({len(matches)}/{len(tickers)})")
         lines.append("")
+        lines.append("| Ticker | Weekly % | Close | 50 SMA | 200 SMA | Dist/ATR |")
+        lines.append("|---|---|---|---|---|---|")
+        for t, wk, close, sma50, sma200, dist_atr in matches:
+            lines.append(f"| {t} | {wk:+.2f}% | {close:.2f} | {sma50:.2f} | {sma200:.2f} | {dist_atr:+.2f} |")
+        lines.append("")
         lines.append(", ".join(t for t, *_ in matches))
         lines.append("")
     if total_matches == 0:
@@ -214,8 +219,8 @@ def main() -> None:
     parser.add_argument("--date", metavar="YYYY-MM-DD", help="Date to process (default: today)")
     parser.add_argument("--min", type=float, default=-5.0, help="Minimum weekly %% change (default: -5)")
     parser.add_argument("--max", type=float, default=5.0, help="Maximum weekly %% change (default: 5)")
-    parser.add_argument("--atr-mult", type=float, default=5.0,
-                         help="Max distance above the 50 SMA, in ATR(14) multiples (default: 5)")
+    parser.add_argument("--atr-mult", type=float, default=3.0,
+                         help="Max distance above the 50 SMA, in ATR(14) multiples (default: 3)")
     parser.add_argument("--results-dir", default="results", metavar="PATH", help="Base results directory")
     parser.add_argument(
         "--insights-dir", default="daily_insights", metavar="PATH",
@@ -268,7 +273,8 @@ def main() -> None:
     if not args.no_save:
         out_dir = Path(args.insights_dir) / day
         out_dir.mkdir(parents=True, exist_ok=True)
-        out_path = out_dir / f"{day}_trend_confirmation_filter.md"
+        suffix = "" if args.atr_mult == 3.0 else f"_atr{args.atr_mult:g}"
+        out_path = out_dir / f"{day}_trend_confirmation_filter{suffix}.md"
         out_path.write_text(report)
         print(f"\nSaved → {out_path}")
 
